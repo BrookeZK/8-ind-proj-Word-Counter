@@ -11,7 +11,7 @@ namespace WordCounter.Tests
 		[TestMethod]
 		public void SentenceConstructor_CreatesInstanceOfWord_Word()
 		{
-			Sentence sentence = new Sentence();
+			Sentence sentence = new Sentence("the", "These apples are the best apples in all the land.");
 
 		}
 	}
