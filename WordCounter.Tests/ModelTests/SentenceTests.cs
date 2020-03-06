@@ -9,6 +9,10 @@ namespace WordCounter.Tests
 	public class SentenceTests
 	{
 		[TestMethod]
-		public void Sentence
+		public void SentenceConstructor_CreatesInstanceOfWord_Word()
+		{
+			Sentence sentence = new Sentence();
+
+		}
 	}
 }
