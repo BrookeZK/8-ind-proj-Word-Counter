@@ -31,18 +31,19 @@ namespace WordCounter.Tests
 			Assert.AreEqual(mySentence, actual);
 		}
 
-		// [TestMethod]
-		// public void SentenceToInputArray_ConvertsUserSentenceToArrayOfStrings_Array()
-		// {
-		// 	//Arrange
-		// 	string mySentence = "These apples are the best apples in all the land.";
-		// 	string myWord = "the";
-		// 	Sentence sentence = new Sentence("the", "These apples are the best apples in all the land.");
-		// 	//Act
+		[TestMethod]
+		public void SentenceToInputArray_ConvertsUserSentenceToArrayOfStrings_Array()
+		{
+			//Arrange
+			string mySentence = "These apples are the best apples in all the land.";
+			Sentence inputSentence = new Sentence("the", mySentence);
+			//Act
 
-		// 	char[] mySentenceArray = mySentence.SentenceToWordArray();
-			// char [] sentenceArray.split(' ');
+		string [] sentenceArray = mySentence.Split(' ');
+		string [] mySentenceArray = inputSentence.SentenceToWordArray();
+			
 			//Assert
-		// }
+			CollectionAssert.AreEqual(mySentenceArray, sentenceArray);
+		}
 	}
 }
