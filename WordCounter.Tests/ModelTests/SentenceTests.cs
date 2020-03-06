@@ -11,8 +11,27 @@ namespace WordCounter.Tests
 		[TestMethod]
 		public void SentenceConstructor_CreatesInstanceOfWord_Word()
 		{
-			Sentence sentence = new Sentence("the", "These apples are the best apples in all the land.");
+			string myWord = "word";
+			string mySentence = "These apples are the best apples in all the land.";
+			Sentence sentence = new Sentence(myWord, mySentence);
 
+			string actual = sentence.InputWord;
+
+			Assert.AreEqual(myWord, actual);
 		}
+
+		// [TestMethod]
+		// public void SentenceToInputArray_ConvertsUserSentenceToArrayOfStrings_Array()
+		// {
+		// 	//Arrange
+		// 	string mySentence = "These apples are the best apples in all the land.";
+		// 	string myWord = "the";
+		// 	Sentence sentence = new Sentence("the", "These apples are the best apples in all the land.");
+		// 	//Act
+
+		// 	char[] mySentenceArray = mySentence.SentenceToWordArray();
+			// char [] sentenceArray.split(' ');
+			//Assert
+		// }
 	}
 }
