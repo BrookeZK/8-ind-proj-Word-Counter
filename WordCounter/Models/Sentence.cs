@@ -7,6 +7,7 @@ namespace WordCounter.Models
 	{
 		public string InputWord {get; set;}
 		public string InputSentence {get; set;}
+		public int WordCount = 0;
 
 		public Sentence(string inputWord, string inputSentence)
 		{
@@ -17,7 +18,11 @@ namespace WordCounter.Models
 		public string[] SentenceToWordArray()
 		{
 			string[] inputSentenceToArray = InputSentence.Split(' ');
-			return inputSentenceToArray;
+			return inputSentenceArray;
+		}
+
+		public void WordChecker(string[] inputSentenceArray, string inputWord )
+		{
 			
 		}
 	}

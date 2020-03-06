@@ -32,18 +32,32 @@ namespace WordCounter.Tests
 		}
 
 		[TestMethod]
-		public void SentenceToInputArray_ConvertsUserSentenceToArrayOfStrings_Array()
+		public void SentenceToWordArray_ConvertsUserSentenceToArrayOfStrings_Array()
 		{
 			//Arrange
 			string mySentence = "These apples are the best apples in all the land.";
-			Sentence inputSentence = new Sentence("the", mySentence);
+			Sentence inputFunSentence = new Sentence("the", mySentence);
 			//Act
 
-		string [] sentenceArray = mySentence.Split(' ');
-		string [] mySentenceArray = inputSentence.SentenceToWordArray();
+			string [] sentenceArray = mySentence.Split(' ');
+			string [] mySentenceArray = inputFunSentence.SentenceToWordArray(mySentence);
 			
 			//Assert
 			CollectionAssert.AreEqual(mySentenceArray, sentenceArray);
 		}
+		[TestMethod]
+		public void SentenceChecker_ChecksSentenceForWordAnReturnsWordCount_Integer()
+		{
+			//Arrange
+			string myWord = "the";
+			string mySentence = "these apples are the best apples in all the land.";
+			Sentence sentence = new Sentence(myWord, mySentence);
+			//Act
+			string[] intoArray = sentence.SentenceToWordArray(mySentence);
+			int result = sentence.SentenceChecker(intoArray);
+			//Assert
+			Assert.AreEqual(result, 2);
+		}
+
 	}
 }
