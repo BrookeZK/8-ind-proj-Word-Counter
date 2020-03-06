@@ -6,6 +6,19 @@ namespace WordCounter.Models
 	public class Sentence
 	{
 		public string InputWord {get; set;}
+		public string InputSentence {get; set;}
+
+		public Sentence(string inputWord, string inputSentence)
+		{
+			InputWord = inputWord;
+			InputSentence = inputSentence;
+		}
 		
+		public string[] SentenceToWordArray()
+		{
+			string[] inputSentenceToArray = InputSentence.Split(' ');
+			return inputSentenceToArray;
+			
+		}
 	}
 }
