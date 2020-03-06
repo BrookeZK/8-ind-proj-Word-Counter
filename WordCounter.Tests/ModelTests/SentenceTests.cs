@@ -19,6 +19,7 @@ namespace WordCounter.Tests
 
 			Assert.AreEqual(myWord, actual);
 		}
+		
 
 		// [TestMethod]
 		// public void SentenceToInputArray_ConvertsUserSentenceToArrayOfStrings_Array()
