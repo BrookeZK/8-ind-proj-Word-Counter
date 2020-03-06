@@ -9,7 +9,7 @@ namespace WordCounter.Tests
 	public class SentenceTests
 	{
 		[TestMethod]
-		public void SentenceConstructor_CreatesInstanceOfWord_Word()
+		public void SentenceConstructor_CreatesInstanceOfSentence_Word()
 		{
 			string myWord = "word";
 			string mySentence = "These apples are the best apples in all the land.";
@@ -19,7 +19,17 @@ namespace WordCounter.Tests
 
 			Assert.AreEqual(myWord, actual);
 		}
-		
+		[TestMethod]
+		public void SentenceConstructor_CreatesInstanceOfSentence_Sentence()
+		{
+			string myWord = "word";
+			string mySentence = "These apples are the best apples in all the land.";
+			Sentence sentence = new Sentence(myWord, mySentence);
+
+			string actual = sentence.InputSentence;
+
+			Assert.AreEqual(mySentence, actual);
+		}
 
 		// [TestMethod]
 		// public void SentenceToInputArray_ConvertsUserSentenceToArrayOfStrings_Array()
