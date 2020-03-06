@@ -30,6 +30,12 @@ namespace WordCounter.Tests
 
 			Assert.AreEqual(mySentence, actual);
 		}
+		[TestMethod]
+		public void inputWord_LowerCaseInput_Word()
+		{
+			string myWord = "WORD";
+			
+		}
 
 		[TestMethod]
 		public void SentenceToWordArray_ConvertsUserSentenceToArrayOfStrings_Array()
@@ -50,14 +56,13 @@ namespace WordCounter.Tests
 		{
 			//Arrange
 			string myWord = "the";
-			string mySentence = "these apples are the best apples in all the land.";
+			string mySentence = "these the apples are the best apples in all the land.";
 			Sentence sentence = new Sentence(myWord, mySentence);
 			//Act
 			string[] intoArray = sentence.SentenceToWordArray(mySentence);
-			int result = sentence.SentenceChecker(intoArray);
+			int result = sentence.SentenceChecker(intoArray, myWord);
 			//Assert
-			Assert.AreEqual(result, 2);
+			Assert.AreEqual(result, 3);
 		}
-
 	}
 }

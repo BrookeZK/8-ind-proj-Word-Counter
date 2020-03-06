@@ -15,15 +15,36 @@ namespace WordCounter.Models
 			InputSentence = inputSentence;
 		}
 		
-		public string[] SentenceToWordArray()
+		public string WordCleaner(string inputWord)
 		{
-			string[] inputSentenceToArray = InputSentence.Split(' ');
+			string cleanInputWord = inputWord.ToLower();
+			return cleanInputWord;
+		}
+		public string SentenceCleaner(string inputSentence)
+		{
+			string cleanInputSentence = inputSentence.ToLower();
+			return cleanInputSentence;
+		}
+		public string[] SentenceToWordArray(string cleanInputSentence)
+		{
+			string[] inputSentenceArray = cleanInputSentence.Split(' ');
 			return inputSentenceArray;
 		}
 
-		public void WordChecker(string[] inputSentenceArray, string inputWord )
+		public int SentenceChecker(string[] inputSentenceArray, string cleanInputWord)
 		{
-			
-		}
+			foreach (string word in inputSentenceArray)
+			{
+				if (cleanInputWord.Contains(word))
+				{
+					WordCount += 1;
+				}
+				else
+				{
+					WordCount += 0;
+				}
+			}
+			return WordCount;
+		}                  
 	}
 }
