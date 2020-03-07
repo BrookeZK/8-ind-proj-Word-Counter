@@ -13,7 +13,7 @@ namespace WordCounter
 ||W |||O |||R |||D |||       |||C |||H |||E |||C |||K |||E |||R ||
 ||__|||__|||__|||__|||_______|||__|||__|||__|||__|||__|||__|||__||
 |/__\|/__\|/__\|/__\|/_______\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|");
-
+		InputGather();
 		}
 		public static void InputGather()
 		{
@@ -35,7 +35,7 @@ namespace WordCounter
 			string[] userSentenceArray = newSentence.SentenceToWordArray(cleanUserSentence);
 
 			Console.WriteLine("================================================");
-			Console.WriteLine("Total count of: " + (userWord) + " in the sentence " + (userSentence) + " : " + newSentence.SentenceChecker(userSentenceArray, cleanUserWord));
+			Console.WriteLine("Total count of the word " + " ' "+ (userWord) + " ' " + " in the sentence "+ " ' " + (userSentence) + " ' " + " : " + newSentence.SentenceChecker(userSentenceArray, cleanUserWord));
 		}
 	}
 }
