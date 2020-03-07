@@ -15,7 +15,7 @@ _This application allows a user to enter a sentence and a word that will be coun
 | Application allows a user to enter a word and constructs a word to be counted instance | "the" | new instance of word to be counted is created with "the" as property |
 | Application askes the user to input a sentence from which the frequency of the word to be counted is derived| "The theatre is lovely this time of year." | Application forms Sentence instance with "the" as a string property and "The theatre is lovely this time of year" as a string property |
 | Application converts sentence input into an array of words | "The theatre is lovely this time of year." | GetSentenceWordArray(); returns {'the', 'theatre', 'is', 'lovely', 'this', 'time', 'of', 'year'} |
-| Application checks to see if the sentence array contains the input word  | InputWord : 'the' Sentence Array : {'the', 'theatre', 'is', 'lovely', 'this', 'time', 'of', 'year'} | GetWordCount() returns {inputWord} count : 1|
+| Application checks to see if the sentence array contains the input word  | InputWord : 'the' Sentence Array : {'the', 'theatre', 'is', 'lovely', 'this', 'time', 'of', 'year'} | SentenceChecker() returns {inputWord} count : 1|
 
 
 ## Setup/Installation Requirements
@@ -36,9 +36,9 @@ _Enter the command ``dotnet tool install -g dotnet-script`` in Terminal (macOS) 
 ### Clone this repository
 
 _Enter the following commands in Terminal (macOS) or PowerShell (Windows):_
-* ``cd desktop``
-* ``git clone`` followed by the URL to this repository.
-* ``cd`` followed by the repository name.
+* $ cd desktop
+* $ git clone https://github.com/dcluukko/8-ind-proj-Word-Counter.git
+* $ cd WordCounter.Solution
 
 _Confirm that you have navigated to the correct directory (e.g., by entering the command_ ``pwd`` _in Terminal)._
 
@@ -57,4 +57,4 @@ _To view/edit the source code of this application, open the contents of this dir
 
 *This webpage is licensed under the MIT license.*
 
-Copyright (c) 2020 **_Michelle Morin, Dana Luukko_**
+Copyright (c) 2020 **_Dana Luukko_**

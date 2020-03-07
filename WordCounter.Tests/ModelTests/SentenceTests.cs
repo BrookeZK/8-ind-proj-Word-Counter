@@ -31,11 +31,32 @@ namespace WordCounter.Tests
 			Assert.AreEqual(mySentence, actual);
 		}
 		[TestMethod]
-		public void inputWord_LowerCaseInput_Word()
+		public void inputWord_WordCleaner_Word()
 		{
-			string myWord = "WORD";
-			
+			//Arrange
+			string myWord = "word";
+			string mySentence = "These apples are the best apples in all the land.";
+			Sentence inputFunSentence = new Sentence("WORD", mySentence);
+			//Act
+			string myLowerWord = myWord.ToLower();
+			string lowerWord = inputFunSentence.WordCleaner(myWord);
+			//Assert
+			Assert.AreEqual(myLowerWord, lowerWord);
 		}
+		[TestMethod]
+		public void inputSentence_SentenceCleaner_Sentence()
+		{
+			//Arrange
+			string myWord = "word";
+			string mySentence = "THESE APPLES ARE THE BEST APPLES IN ALL THE LAND";
+			Sentence inputFunSentence = new Sentence(myWord, "these apples are the best apples in all the land");
+			//Act
+			string myLowerSentence = mySentence.ToLower();
+			string lowerSentence = inputFunSentence.WordCleaner(mySentence);
+			//Assert
+			Assert.AreEqual(myLowerSentence, lowerSentence);
+		}
+		
 
 		[TestMethod]
 		public void SentenceToWordArray_ConvertsUserSentenceToArrayOfStrings_Array()
@@ -45,8 +66,8 @@ namespace WordCounter.Tests
 			Sentence inputFunSentence = new Sentence("the", mySentence);
 			//Act
 
-			string [] sentenceArray = mySentence.Split(' ');
-			string [] mySentenceArray = inputFunSentence.SentenceToWordArray(mySentence);
+			string [] mySentenceArray = mySentence.Split(' ');
+			string [] sentenceArray = inputFunSentence.SentenceToWordArray(mySentence);
 			
 			//Assert
 			CollectionAssert.AreEqual(mySentenceArray, sentenceArray);
